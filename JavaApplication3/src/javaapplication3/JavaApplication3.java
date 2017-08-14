@@ -31,7 +31,7 @@ public class JavaApplication3 {
         a2 = a2 * peso2;
         a3 = a3 * peso3;
         
-        media = (a1 + a2 + a3) / 3;
+        media = (a1 + a2 + a3) /10.0;
         
         return media;
     }
