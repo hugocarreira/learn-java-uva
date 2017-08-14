@@ -9,17 +9,40 @@
 
 package javaapplication5;
 
-/**
- *
- * @author hugocolombo
- */
-public class JavaApplication5 {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
+public class JavaApplication5 {
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        
+        int nvezes = 0, tPessoas = 0, t1 = 0, t2 = 0, t3 = 0;
+        double perc1 = 0, perc2 = 0, perc3 = 0;
+        
+        System.out.print("Quantas vezes você almoçou no restaurante mês passado? ");
+        nvezes = Integer.parseInt(sc.nextLine());
+        
+        while(nvezes != 1) {
+            if(nvezes >= 0){
+                tPessoas++;
+                if(nvezes < 10) {
+                    t1++;
+                } else if(nvezes <= 15) {
+                    t2++;
+                } else {
+                    t3++;
+                }
+            }
+            System.out.print("Quantas vezes você almoçou no restaurante mês passado? ");
+            nvezes = Integer.parseInt(sc.nextLine());            
+        }
+        perc1 = (double) t1/tPessoas*100;
+        perc2 = (double) t2/tPessoas*100;
+        perc3 = (double) t3/tPessoas*100;
+        
+        System.out.println("< 10: " + Math.floor(perc1));
+        System.out.println("10 à 15: " + Math.floor(perc2));
+        System.out.println("> 15: " + Math.floor(perc3));
     }
     
 }
